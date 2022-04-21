@@ -1,0 +1,175 @@
+<?xml version="1.0"?>
+<doc>
+    <assembly>
+        <name>DemoAsyncAwait</name>
+    </assembly>
+    <members>
+        <member name="T:DemoAsyncAwait.Concrete.EmployeeRepository">
+            <summary>
+            Concrete class for IEmployeeRepository
+            </summary>
+        </member>
+        <member name="P:DemoAsyncAwait.Concrete.EmployeeRepository.Employees">
+            <summary>
+            Gets (property) Employees
+            </summary>
+        </member>
+        <member name="M:DemoAsyncAwait.Concrete.EmployeeRepository.GetEmployee(DemoAsyncAwait.Models.EmployeeModel)">
+            <summary>
+            Gets the Employee by EmployeeModel
+            </summary>
+            <param name="employeeModel">EmployeeModel</param>
+            <returns>Task EmployeeModel </returns>
+        </member>
+        <member name="M:DemoAsyncAwait.Concrete.EmployeeRepository.GetEmployees(DemoAsyncAwait.Models.EmployeeModel)">
+            <summary>
+            Gets the Employees by EmployeeModel
+            </summary>
+            <param name="employeeModel">EmployeeModel</param>
+            <returns>Task IEnumerable EmployeeModel</returns>
+        </member>
+        <member name="T:DemoAsyncAwait.Controllers.EmployeeController">
+            <summary>
+            Employee Controller
+            </summary>
+        </member>
+        <member name="M:DemoAsyncAwait.Controllers.EmployeeController.#ctor(DemoAsyncAwait.Interfaces.IEmployeeRepository)">
+            <summary>
+            Constructor for EmployeeController
+            </summary>
+            <param name="employeeRepository"></param>
+        </member>
+        <member name="M:DemoAsyncAwait.Controllers.EmployeeController.GetEmployeesAsync(DemoAsyncAwait.Models.EmployeeModel)">
+            <summary>
+            Gets the Employees by EmployeeModel
+            </summary>
+            <param name="employeeModel">EmployeeModel</param>
+            <returns>Task IEnumerable EmployeeModel></returns>
+        </member>
+        <member name="M:DemoAsyncAwait.Controllers.EmployeeController.GetEmployeeAsync(DemoAsyncAwait.Models.EmployeeModel)">
+            <summary>
+            Gets the Employee by EmployeeModel
+            </summary>
+            <param name="employeeModel">EmployeeModel</param>
+            <returns>EmployeeModel</returns>
+        </member>
+        <member name="M:DemoAsyncAwait.Controllers.EmployeeController.GetEmployeeByIdAsync(System.Nullable{System.Int32})">
+            <summary>
+            Gets the Employee by Id
+            </summary>
+            <param name="id">EmployeeId</param>
+            <returns>EmployeeModel</returns>
+        </member>
+        <member name="M:DemoAsyncAwait.Controllers.EmployeeController.IsEmployeeValid(DemoAsyncAwait.Models.EmployeeModel)">
+            <summary>
+            Checks if the Employee is valid
+            </summary>
+            <param name="employeeModel">EmployeeModel</param>
+            <returns>bool</returns>
+        </member>
+        <member name="M:DemoAsyncAwait.Controllers.EmployeeController.GetEmployeeDataAsync(DemoAsyncAwait.Models.EmployeeModel)">
+            <summary>
+            Gets the Employee data
+            </summary>
+            <param name="employeeModel">EmployeeModel</param>
+            <returns>EmployeeModel</returns>
+        </member>
+        <member name="T:DemoAsyncAwait.Interfaces.IEmployeeRepository">
+            <summary>
+            Interface for Employee Repository
+            </summary>
+        </member>
+        <member name="M:DemoAsyncAwait.Interfaces.IEmployeeRepository.GetEmployees(DemoAsyncAwait.Models.EmployeeModel)">
+            <summary>
+            Gets the Employees by EmployeeModel
+            </summary>
+            <param name="employeeModel">EmployeeModel</param>
+            <returns>Task IEnumerable EmployeeModel</returns>
+        </member>
+        <member name="M:DemoAsyncAwait.Interfaces.IEmployeeRepository.GetEmployee(DemoAsyncAwait.Models.EmployeeModel)">
+            <summary>
+            Gets the Employee by EmployeeModel
+            </summary>
+            <param name="employeeModel">EmployeeModel</param>
+            <returns>Task EmployeeModel</returns>
+            
+        </member>
+        <member name="T:DemoAsyncAwait.Models.EmployeeModel">
+            <summary>
+            Employee Model
+            </summary>
+        </member>
+        <member name="P:DemoAsyncAwait.Models.EmployeeModel.Id">
+            <summary>
+            Gets or Sets Id
+            </summary>
+        </member>
+        <member name="P:DemoAsyncAwait.Models.EmployeeModel.Name">
+            <summary>
+            Gets or Sets Name
+            </summary>
+        </member>
+        <member name="P:DemoAsyncAwait.Models.EmployeeModel.DateOfBirth">
+            <summary>
+            Gets or Sets DateOfBirth
+            </summary>
+        </member>
+        <member name="P:DemoAsyncAwait.Models.EmployeeModel.Address">
+            <summary>
+            Gets or Sets Address
+            </summary>
+        </member>
+        <member name="P:DemoAsyncAwait.Models.EmployeeModel.Phone">
+            <summary>
+            Gets or Sets Phone
+            </summary>
+        </member>
+        <member name="T:DemoAsyncAwait.Program">
+            <summary>
+            Class for Program
+            </summary>
+        </member>
+        <member name="M:DemoAsyncAwait.Program.Main(System.String[])">
+            <summary>
+            Main Method
+            </summary>
+            <param name="args"></param>
+        </member>
+        <member name="M:DemoAsyncAwait.Program.CreateHostBuilder(System.String[])">
+            <summary>
+            CreateHostBuilder Method
+            </summary>
+            <param name="args">string[]</param>
+            <returns>IHostBuilder</returns>
+        </member>
+        <member name="T:DemoAsyncAwait.Startup">
+            <summary>
+            Class for Startup
+            </summary>
+        </member>
+        <member name="M:DemoAsyncAwait.Startup.#ctor(Microsoft.Extensions.Configuration.IConfiguration)">
+            <summary>
+            Constructor for Startup
+            </summary>
+            <param name="configuration">IConfiguration</param>
+        </member>
+        <member name="P:DemoAsyncAwait.Startup.Configuration">
+            <summary>
+            Gets or Sets Configuration
+            </summary>
+        </member>
+        <member name="M:DemoAsyncAwait.Startup.ConfigureServices(Microsoft.Extensions.DependencyInjection.IServiceCollection)">
+            <summary>
+            ConfigureServices Method
+            </summary>
+            <param name="services">IServiceCollection</param>
+        </member>
+        <member name="M:DemoAsyncAwait.Startup.Configure(Microsoft.AspNetCore.Builder.IApplicationBuilder,Microsoft.AspNetCore.Hosting.IWebHostEnvironment)">
+            <summary>
+            Configure Method
+            </summary>
+            <param name="app">IApplicationBuilder</param>
+            <param name="env">IWebHostEnvironment</param>
+        </member>
+    </members>
+</doc>
