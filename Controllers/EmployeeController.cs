@@ -49,7 +49,7 @@ namespace DemoAsyncAwait.Controllers
             if (IsEmployeeValid(employeeModel))
                 return BadRequest();
             else
-                return Ok((await _employeeRepository.GetEmployees(employeeModel).ConfigureAwait(false)).AsEnumerable());
+                return Ok((await _employeeRepository.GetEmployeesAsync(employeeModel).ConfigureAwait(false)).AsEnumerable());
         }
 
         /// <summary>
@@ -110,7 +110,7 @@ namespace DemoAsyncAwait.Controllers
         /// <returns>EmployeeModel</returns>
         private async Task<IActionResult> GetEmployeeDataAsync(EmployeeModel employeeModel)
         {
-            var employee = await _employeeRepository.GetEmployee(employeeModel).ConfigureAwait(false);
+            var employee = await _employeeRepository.GetEmployeeAsync(employeeModel).ConfigureAwait(false);
             if (employee == null)
                 return NotFound("Employee is not found");
             else

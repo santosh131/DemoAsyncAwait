@@ -16,7 +16,7 @@ namespace DemoAsyncAwait.Interfaces
         /// </summary>
         /// <param name="employeeModel">EmployeeModel</param>
         /// <returns>Task IEnumerable EmployeeModel</returns>
-        Task<IEnumerable<EmployeeModel>> GetEmployees(EmployeeModel employeeModel);
+        Task<IEnumerable<EmployeeModel>> GetEmployeesAsync(EmployeeModel employeeModel);
 
         /// <summary>
         /// Gets the Employee by EmployeeModel
@@ -24,7 +24,7 @@ namespace DemoAsyncAwait.Interfaces
         /// <param name="employeeModel">EmployeeModel</param>
         /// <returns>Task EmployeeModel</returns>
         /// 
-        Task<EmployeeModel> GetEmployee(EmployeeModel employeeModel);
+        Task<EmployeeModel> GetEmployeeAsync(EmployeeModel employeeModel);
 
     }
 }

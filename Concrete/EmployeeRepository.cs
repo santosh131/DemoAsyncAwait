@@ -38,9 +38,10 @@ namespace DemoAsyncAwait.Concrete
         /// </summary>
         /// <param name="employeeModel">EmployeeModel</param>
         /// <returns>Task EmployeeModel </returns>
-        public Task<EmployeeModel> GetEmployee(EmployeeModel employeeModel)
+        public async Task<EmployeeModel> GetEmployeeAsync(EmployeeModel employeeModel)
         {
-            return Task.FromResult(Employees.Where(e => e.Id.Equals(employeeModel.Id)).FirstOrDefault());
+            return await Task.Run(() => { return Employees.Where(e => e.Id.Equals(employeeModel.Id)).FirstOrDefault(); });
+            //return Task.FromResult(Employees.Where(e => e.Id.Equals(employeeModel.Id)).FirstOrDefault());
         }
 
         /// <summary>
@@ -48,9 +49,10 @@ namespace DemoAsyncAwait.Concrete
         /// </summary>
         /// <param name="employeeModel">EmployeeModel</param>
         /// <returns>Task IEnumerable EmployeeModel</returns>
-        public Task<IEnumerable<EmployeeModel>> GetEmployees(EmployeeModel employeeModel)
+        public async Task<IEnumerable<EmployeeModel>> GetEmployeesAsync(EmployeeModel employeeModel)
         {
-            return Task.FromResult(Employees.Where(e => e.Id.Equals(employeeModel.Id)));
+            return await Task.Run(() => { return Employees.Where(e => e.Id.Equals(employeeModel.Id)); });
+            //return Task.FromResult(Employees.Where(e => e.Id.Equals(employeeModel.Id)));
         }
 
         #endregion
